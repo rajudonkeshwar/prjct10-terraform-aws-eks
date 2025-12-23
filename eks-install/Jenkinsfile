@@ -2,11 +2,11 @@
 pipeline {
     agent any
 
-    environment {
-        // Define environment variables
-        // AWS_ACCESS_KEY_ID = credentials('aws-key') // AWS credentials (if needed)
-        // AWS_SECRET_ACCESS_KEY = credentials('aws-secret') // AWS credentials (if needed)
-    }
+    // environment {
+    //     Define environment variables
+    //     AWS_ACCESS_KEY_ID = credentials('aws-key') // AWS credentials (if needed)
+    //     AWS_SECRET_ACCESS_KEY = credentials('aws-secret') // AWS credentials (if needed)
+    // }
 
     stages {
         stage('CLONE SCM') {
