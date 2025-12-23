@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "mindcircuit-eks-bucket"
+    bucket         = "mindcircuit-eks-bucket3214"
     key            = "terraform.tfstate"
     region         = "us-east-1"
     dynamodb_table = "mc-eks-state-lock"
