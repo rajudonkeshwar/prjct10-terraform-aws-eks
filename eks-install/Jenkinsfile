@@ -67,22 +67,29 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 // Run Terraform plan
+            withCredentials([[$class: 'AmazonWebServicesCredentialsBinding',
+            credentialsId: 'aws-creds']]) {
                 echo 'Running Terraform Plan...'
                  sh '''
                         cd eks-install
                         terraform plan -out=tfplan
                     '''
             }
+            }
         }
 
         stage('Terraform Apply') {
             steps {
                 // Apply Terraform changes
+
+            withCredentials([[$class: 'AmazonWebServicesCredentialsBinding',
+            credentialsId: 'aws-creds']]) {
                 echo 'Applying Terraform changes...'
                  sh '''
                         cd eks-install
                       terraform destroy -auto-approve 
                     '''
+            }
             }
         }
 
