@@ -21,7 +21,7 @@ pipeline {
         script {
             sh '''
                 # Set Terraform version
-                TERRAFORM_VERSION="1.6.6"
+                TERRAFORM_VERSION="1.14.3"
 
                 # Install unzip if not installed
                 if ! command -v unzip &> /dev/null; then
