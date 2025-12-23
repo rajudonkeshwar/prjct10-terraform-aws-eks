@@ -56,6 +56,7 @@ pipeline {
                     echo 'Initializing Terraform...'
                     sh      '''
                             cd eks-install
+                            cat main.tf
                             terraform init
                             '''
                 
